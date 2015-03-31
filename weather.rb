@@ -1,7 +1,7 @@
 require 'yahoo_weatherman'
 
 
-client = Weatherman::Client.new
+client = Weatherman::Client.new :unit => 'F' 
 
 puts "What is your zip code?"
 
@@ -26,5 +26,5 @@ weather.forecasts.each do |forecasts|
      dayName = day.strftime('%A')
   end
 
-    puts dayName +  " is going to be "  + forecasts["text"].to_s + " with a low of " + forecasts["low"].to_s + " and a high of " + forecasts["high"].to_s + " degrees Celsius."
+    puts dayName +  " is going to be "  + forecasts["text"].to_s + " with a low of " + forecasts["low"].to_s + " and a high of " + forecasts["high"].to_s + "."
 end
